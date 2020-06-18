@@ -7,13 +7,15 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PhonesPageComponent } from './phones-page/phones-page.component';
 import { PhoneDetailsPageComponent } from './phone-details-page/phone-details-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImgPipe } from './img.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     PhonesPageComponent,
-    PhoneDetailsPageComponent
+    PhoneDetailsPageComponent,
+    ImgPipe
   ],
   imports: [
     BrowserModule,

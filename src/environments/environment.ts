@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiURL: 'https://mate-academy.github.io/react_phone-catalog/api',
+  imgURL: 'assets/'
 };
 
 /*
