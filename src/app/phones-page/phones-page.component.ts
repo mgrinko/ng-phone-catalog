@@ -2,14 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-interface Phone {
-  id: string;
-  age: number;
-  snippet: string;
-  imageUrl: string;
-  name: string;
-}
-
 @Component({
   selector: 'app-phones-page',
   templateUrl: './phones-page.component.html',
@@ -17,6 +9,7 @@ interface Phone {
 })
 export class PhonesPageComponent implements OnInit {
   phones: Phone[] = [];
+  cartItems: Phone[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -25,5 +18,10 @@ export class PhonesPageComponent implements OnInit {
       .subscribe(phones => {
         this.phones = phones;
       });
+  }
+
+  addToCart(phone) {
+    console.log(phone);
+    this.cartItems.push(phone);
   }
 }

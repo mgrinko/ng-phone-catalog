@@ -8,6 +8,7 @@ import { PhonesPageComponent } from './phones-page/phones-page.component';
 import { PhoneDetailsPageComponent } from './phone-details-page/phone-details-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImgPipe } from './img.pipe';
+import { PhoneCatalogComponent } from './components/phone-catalog/phone-catalog.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ImgPipe } from './img.pipe';
     HomePageComponent,
     PhonesPageComponent,
     PhoneDetailsPageComponent,
-    ImgPipe
+    ImgPipe,
+    PhoneCatalogComponent
   ],
   imports: [
     BrowserModule,
