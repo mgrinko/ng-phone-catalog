@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhonesService } from '../services/phones.service';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-phone-details-page',
@@ -19,13 +20,13 @@ export class PhoneDetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params
-      .subscribe(params => {
-        this.phonesService.getById(params.phoneId)
-          .subscribe(details => {
-            this.phone = details;
-            this.selectedImage = details.images[0];
-          });
+      .pipe(
+        map(params => params.phoneId),
+        switchMap(phoneId => this.phonesService.getById(phoneId))
+      )
+      .subscribe(details => {
+        this.phone = details;
+        this.selectedImage = details.images[0];
       });
   }
-
 }
