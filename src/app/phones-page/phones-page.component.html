@@ -7,8 +7,8 @@
     <div class="col-md-2">
       <section>
         <p>
-          Search:
-          <input>
+          Search: {{ query }}
+          <input [(ngModel)]="query">
         </p>
 
         <p>
@@ -31,7 +31,7 @@
     <!--Main content-->
     <div class="col-md-10">
       <app-phone-catalog
-        [phones]="phones"
+        [phones]="phones | filterPhones: query"
         (add)="addToCart($event)"
       ></app-phone-catalog>
     </div>

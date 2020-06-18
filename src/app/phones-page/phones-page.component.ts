@@ -9,6 +9,7 @@ import { PhonesService } from '../services/phones.service';
 export class PhonesPageComponent implements OnInit {
   phones: Phone[] = [];
   cartItems: Phone[] = [];
+  query = '';
 
   constructor(private phonesService: PhonesService) {}
 

@@ -9,6 +9,8 @@ import { PhoneDetailsPageComponent } from './phone-details-page/phone-details-pa
 import { HttpClientModule } from '@angular/common/http';
 import { ImgPipe } from './img.pipe';
 import { PhoneCatalogComponent } from './components/phone-catalog/phone-catalog.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPhonesPipe } from './filter-phones.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { PhoneCatalogComponent } from './components/phone-catalog/phone-catalog.
     PhonesPageComponent,
     PhoneDetailsPageComponent,
     ImgPipe,
-    PhoneCatalogComponent
+    PhoneCatalogComponent,
+    FilterPhonesPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
