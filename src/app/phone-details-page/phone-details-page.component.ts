@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-phone-details-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhoneDetailsPageComponent implements OnInit {
 
-  constructor() { }
+  phoneId = '';
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params
+      .subscribe(params => {
+        this.phoneId = params.phoneId;
+      });
   }
 
 }
